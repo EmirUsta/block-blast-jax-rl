@@ -1,0 +1,9 @@
+jax==0.10.0
+flax==0.12.7
+optax==0.2.8
+chex==0.1.91
+numpy==2.4.4
+PyYAML==6.0.3
+pygame==2.6.1
+tensorboard==2.20.0
+pytest
