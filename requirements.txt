@@ -7,3 +7,4 @@ PyYAML==6.0.3
 pygame==2.6.1
 tensorboard==2.20.0
 pytest
+mctx==0.0.6
