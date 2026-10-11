@@ -1,5 +1,7 @@
 # Block Blast RL (JAX)
 
+[![CI](https://github.com/EmirUsta/block-blast-jax-rl/actions/workflows/ci.yml/badge.svg)](https://github.com/EmirUsta/block-blast-jax-rl/actions/workflows/ci.yml)
+
 A from-scratch reimplementation of the Block Blast puzzle game in JAX, plus reinforcement learning agents trained on it at GPU scale.
 
 The game logic is written so that thousands of games run in parallel on one GPU with `jax.vmap`/`jit`, which makes large-batch PPO and AlphaZero-style self-play practical on a single machine.
