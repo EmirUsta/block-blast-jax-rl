@@ -1,0 +1,140 @@
+
+piece_set: standard
+pieces:
+  # Single
+  - id: dot
+    cells: [[1]]
+
+  # Horizontal lines
+  - id: h2
+    cells: [[1, 1]]
+  - id: h3
+    cells: [[1, 1, 1]]
+  - id: h4
+    cells: [[1, 1, 1, 1]]
+  - id: h5
+    cells: [[1, 1, 1, 1, 1]]
+
+  # Vertical lines
+  - id: v2
+    cells: [[1], [1]]
+  - id: v3
+    cells: [[1], [1], [1]]
+  - id: v4
+    cells: [[1], [1], [1], [1]]
+  - id: v5
+    cells: [[1], [1], [1], [1], [1]]
+
+  # Squares
+  - id: sq2
+    cells:
+      - [1, 1]
+      - [1, 1]
+  - id: sq3
+    cells:
+      - [1, 1, 1]
+      - [1, 1, 1]
+      - [1, 1, 1]
+
+  # Small L (3 cells, 4 rotations)
+  - id: l3_tl
+    cells:
+      - [1, 0]
+      - [1, 1]
+  - id: l3_tr
+    cells:
+      - [0, 1]
+      - [1, 1]
+  - id: l3_bl
+    cells:
+      - [1, 1]
+      - [1, 0]
+  - id: l3_br
+    cells:
+      - [1, 1]
+      - [0, 1]
+
+  # Large L (5 cells, 4 rotations) — corner L
+  - id: l5_tl
+    cells:
+      - [1, 0, 0]
+      - [1, 0, 0]
+      - [1, 1, 1]
+  - id: l5_tr
+    cells:
+      - [0, 0, 1]
+      - [0, 0, 1]
+      - [1, 1, 1]
+  - id: l5_bl
+    cells:
+      - [1, 1, 1]
+      - [1, 0, 0]
+      - [1, 0, 0]
+  - id: l5_br
+    cells:
+      - [1, 1, 1]
+      - [0, 0, 1]
+      - [0, 0, 1]
+
+  # T tetromino (4 cells, 4 rotations)
+  - id: t_up
+    cells:
+      - [1, 1, 1]
+      - [0, 1, 0]
+  - id: t_down
+    cells:
+      - [0, 1, 0]
+      - [1, 1, 1]
+  - id: t_left
+    cells:
+      - [0, 1]
+      - [1, 1]
+      - [0, 1]
+  - id: t_right
+    cells:
+      - [1, 0]
+      - [1, 1]
+      - [1, 0]
+
+  # Diagonal 2 (2 cells, 2 directions)
+  - id: diag2_dr        # \ yönü (sol-üstten sağ-alta)
+    cells:
+      - [1, 0]
+      - [0, 1]
+  - id: diag2_dl        # / yönü (sağ-üstten sol-alta)
+    cells:
+      - [0, 1]
+      - [1, 0]
+
+  # Diagonal 3 (3 cells, 2 directions)
+  - id: diag3_dr        # \ yönü
+    cells:
+      - [1, 0, 0]
+      - [0, 1, 0]
+      - [0, 0, 1]
+  - id: diag3_dl        # / yönü
+    cells:
+      - [0, 0, 1]
+      - [0, 1, 0]
+      - [1, 0, 0]
+
+  # S/Z tetromino (4 cells, 2 rotations each)
+  - id: s_h
+    cells:
+      - [0, 1, 1]
+      - [1, 1, 0]
+  - id: s_v
+    cells:
+      - [1, 0]
+      - [1, 1]
+      - [0, 1]
+  - id: z_h
+    cells:
+      - [1, 1, 0]
+      - [0, 1, 1]
+  - id: z_v
+    cells:
+      - [0, 1]
+      - [1, 1]
+      - [1, 0]
+
