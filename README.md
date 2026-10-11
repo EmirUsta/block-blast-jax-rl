@@ -25,6 +25,31 @@ Trained weights are not included; only the model architectures and training code
 - **CNNActorCritic:** 3x3 conv stack over the board, concatenated with tray one-hot and combo/streak features, then the same policy/value heads.
 - Invalid moves are masked out before sampling, so the agent never wastes actions.
 
+## Results
+
+Measured on a laptop RTX 4050 (6 GB). Episode length = number of pieces placed before game over.
+
+**Simulation throughput** (`benchmarks/bench_throughput.py`, random actions, 200-step `lax.scan`):
+
+| Parallel games | Env steps / s |
+|---|---|
+| 1 | 21K |
+| 256 | 2.2M |
+| 4096 | 3.4M |
+| 16384 | 3.5M |
+
+**Agents:**
+
+| Agent | Eval games | Mean episode length | Mean score |
+|---|---|---|---|
+| Random legal moves | 1000 | 11.6 | 50 |
+| PPO, MLP 128x2, ~750M frames (~9 min) | 1024 | 28.4 | 250 |
+| AlphaZero-style MCTS (200 sims), hard-start curriculum | 3 seeds | 124 | 2031 |
+
+The PPO hidden-size ablation (64 / 128 / 256 units, 50M frames each) found 128 units best; larger networks were slower and did not survive longer.
+
+AlphaZero runs with MCTS at evaluation time reach much longer games, but single-seed evaluations varied a lot, so the table reports the 3-seed number.
+
 ## Setup
 
 ```bash
